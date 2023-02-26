@@ -3,6 +3,7 @@ import { Link, useNavigate} from 'react-router-dom'
 import Alerta from '../components/Alerta'
 import useAuth from '../hooks/useAuth'
 import clienteAxios from '../config/axios'
+import imagen from '../../public/img/images.jpg'
 
 const Login = () => {
 
@@ -43,14 +44,22 @@ const Login = () => {
     return (
         <>
                 <div>
-                    <h1 className="text-indigo-600 font-black text-6xl">
-                        Inicia Sesión y Administra tus  {""} 
+                    <h1 className="text-lime-700 font-black text-7xl text-center">
+                        <img style={{width: 200, height: 100, marginBottom: 20}} src={imagen} alt="imagen sobre nosotros" className='float-right'/>
+                        Clinica M@C                             
+                    </h1>
+                    <div className=' content-between'>
+                    <h1 className="text-lime-700 font-black text-5xl font-mono text-center">
+                        Inicia Sesión y Administra tus  {""}
                         <span className="text-black"> Pacientes</span>
                     </h1>
                 </div>
+                </div>
 
+                
+                
 
-                <div className='mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-white'>
+                <div className='shadow-2xl px-10 py-10 rounded-xl bg-white content-center'>
                     {msg && <Alerta 
                         alerta={alerta}
                     />}
