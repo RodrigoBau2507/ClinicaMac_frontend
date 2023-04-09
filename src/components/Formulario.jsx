@@ -10,7 +10,7 @@ const Formulario = () => {
     const [sintomas, setSintomas] = useState('')
     const [id, setId] = useState(null)
 
-    const [alerta, setAlerta] = useState({})
+    const [alerta, setAlerta] = useState(false)
 
     const { guardarPaciente, paciente } = usePacientes()
 
@@ -38,6 +38,10 @@ const Formulario = () => {
                 msg: 'Todos los campos son obligatorios',
                 error: true
             })
+
+            setTimeout(() => {
+              setAlerta(false)
+            }, 5000);
             return;
         }
 
@@ -47,6 +51,11 @@ const Formulario = () => {
         setAlerta({
             msg: 'Guardado Correctamente'
         })
+
+        setTimeout(() => {
+          setAlerta(false)
+        }, 5000);
+
         setNombre('')
         setPropietario('')
         setEmail('')
@@ -65,7 +74,7 @@ const Formulario = () => {
             <span className="text-teal-600 font-bold">Administralos</span>
         </p>
 
- 
+        {msg && <Alerta alerta={alerta} />}
       <form
         className="bg-white py-10 px-5 mb-10 lg:mb-5 shadow-md rounded-md"
         onSubmit={handleSubmit}
@@ -155,7 +164,7 @@ const Formulario = () => {
             />
       </form>
 
-      {msg && <Alerta alerta={alerta} />}
+      
 
 
       </>
