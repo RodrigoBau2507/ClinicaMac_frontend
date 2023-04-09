@@ -114,3 +114,4 @@ const NuevoPassword = () => {
 };
 
 export default NuevoPassword;
+

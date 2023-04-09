@@ -15,7 +15,7 @@ const Registrar = () => {
         e.preventDefault();
 
         if([nombre, email, password, repetirPassword].includes('')) {
-            setAlerta({  msg: 'Hay campos vacios', error: true })
+            setAlerta({ msg: 'Hay campos vacios', error: true })
             return;
         }
 
@@ -27,8 +27,6 @@ const Registrar = () => {
         if(password.length < 6) {
             setAlerta({ msg: 'El Password es muy corto, agrega minimo 6 caracteres', error: true })
             return
-
-          
         }
 
         setAlerta({})

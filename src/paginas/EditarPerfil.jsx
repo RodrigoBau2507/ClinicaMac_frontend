@@ -22,10 +22,10 @@ const EditarPerfil = () => {
                 msg: 'Email y Nombre son obligatorios',
                 error: true
             })
-            return;
+            return
         }
 
-        const resultado  = await actualizarPerfil(perfil)
+        const resultado = await actualizarPerfil(perfil)
         setAlerta(resultado)
     }
 

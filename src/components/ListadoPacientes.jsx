@@ -39,3 +39,4 @@ const ListadoPacientes = () => {
   };
   
   export default ListadoPacientes;
+  
