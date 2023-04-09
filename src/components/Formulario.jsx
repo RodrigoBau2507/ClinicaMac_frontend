@@ -149,7 +149,7 @@ const Formulario = () => {
 
             <input
                 type="submit"
-                className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors"
+                className="bg-teal-600 w-full p-3 text-white uppercase font-bold hover:bg-teal-700 cursor-pointer transition-colors"
                 value={ id ? 'Guardar Cambios': "Agregar Paciente"}
 
             />
