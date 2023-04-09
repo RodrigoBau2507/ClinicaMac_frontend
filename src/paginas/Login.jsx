@@ -59,7 +59,7 @@ const Login = () => {
                 
                 
 
-                <div className='mt-20 md:mt-5 shadow-2xl px-5 py-10 rounded-xl bg-white content-center'>
+                <div className='shadow-2xl px-10 py-10 rounded-xl bg-white content-center'>
                     {msg && <Alerta 
                         alerta={alerta}
                     />}
