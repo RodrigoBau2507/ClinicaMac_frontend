@@ -13,7 +13,7 @@ const ListadoPacientes = () => {
 
                     <p className="text-xl mt-5 mb-10 text-center">
                         Administra tus {''}
-                        <span className="text-indigo-600 font-bold">Pacientes y Citas</span>
+                        <span className="text-teal-600 font-bold">Pacientes y Citas</span>
                     </p>
 
                     {pacientes.map( paciente => (
@@ -30,7 +30,7 @@ const ListadoPacientes = () => {
 
                     <p className="text-xl mt-5 mb-10 text-center">
                         Comienza agregando pacientes {''}
-                        <span className="text-indigo-600 font-bold">y aparecerán en este lugar</span>
+                        <span className="text-teal-600 font-bold">y aparecerán en este lugar</span>
                     </p>
                 </>
             )}

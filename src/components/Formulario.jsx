@@ -62,7 +62,7 @@ const Formulario = () => {
 
         <p className="text-xl mt-5 mb-10 text-center">
             Añade tus pacientes y {''}
-            <span className="text-indigo-600 font-bold">Administralos</span>
+            <span className="text-teal-600 font-bold">Administralos</span>
         </p>
 
  
