@@ -5,9 +5,10 @@ import usePacientes from '../hooks/usePacientes';
 
 const Formulario = () => {
   const [nombre, setNombre] = useState('')
-  const [propietario, setPropietario] = useState('')
+  const [apellido, setApellido] = useState('')
   const [email, setEmail] = useState('')
   const [fecha, setFecha] = useState('')
+  const [telefono, setTelefono] = useState('')
   const [sintomas, setSintomas] = useState('')
   const [id, setId] = useState(null)
 
@@ -18,9 +19,10 @@ const Formulario = () => {
   useEffect(() => {
     if (paciente?.nombre) {
       setNombre(paciente.nombre)
-      setPropietario(paciente.propietario)
+      setApellido(paciente.apellido)
       setEmail(paciente.email)
       setFecha(paciente.fecha)
+      setTelefono(paciente.telefono)
       setSintomas(paciente.sintomas)
       setId(paciente._id)
     }
@@ -34,7 +36,7 @@ const Formulario = () => {
     e.preventDefault()
 
     // validar el formulario
-    if ([nombre, propietario, email, fecha, sintomas].includes('')) {
+    if ([nombre, apellido, email, fecha, telefono, sintomas].includes('')) {
       setAlerta({
         msg: 'Todos los campos son obligatorios',
         error: true
@@ -48,19 +50,23 @@ const Formulario = () => {
 
 
 
-    guardarPaciente({ nombre, propietario, email, fecha, sintomas, id })
+    guardarPaciente({ nombre, apellido, email, fecha, telefono, sintomas, id })
     setAlerta({
       msg: 'Guardado Correctamente'
     })
+
+
+    
 
     setTimeout(() => {
       setAlerta(false)
     }, 5000);
 
     setNombre('')
-    setPropietario('')
+    setApellido('')
     setEmail('')
     setFecha('')
+    setTelefono('')
     setSintomas('')
     setId('')
   }
@@ -86,7 +92,7 @@ const Formulario = () => {
             htmlFor="nombre"
             className="text-gray-700 uppercase font-bold"
 
-          >Nombre Mascota</label>
+          >Nombre</label>
           <input
             id="nombre"
             type="text"
@@ -99,17 +105,17 @@ const Formulario = () => {
 
         <div className="mb-5">
           <label
-            htmlFor="propietario"
+            htmlFor="apellido"
             className="text-gray-700 uppercase font-bold"
 
-          >Nombre Propietario</label>
+          >Apellido</label>
           <input
-            id="propietario"
+            id="apellido"
             type="text"
-            placeholder="Nombre del Propietario"
+            placeholder="Apellido"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-            value={propietario}
-            onChange={e => setPropietario(e.target.value)}
+            value={apellido}
+            onChange={e => setApellido(e.target.value)}
           />
         </div>
 
@@ -118,11 +124,11 @@ const Formulario = () => {
             htmlFor="email"
             className="text-gray-700 uppercase font-bold"
 
-          >Email Propietario</label>
+          >Email </label>
           <input
             id="email"
             type="email"
-            placeholder="Email del Propietario"
+            placeholder="Email"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={email}
             onChange={e => setEmail(e.target.value)}
@@ -141,6 +147,22 @@ const Formulario = () => {
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={fecha}
             onChange={e => setFecha(e.target.value)}
+          />
+        </div>
+
+        <div className="mb-5">
+          <label
+            htmlFor="telefono"
+            className="text-gray-700 uppercase font-bold"
+
+          >Telefono </label>
+          <input
+            id="telefono"
+            type="telefono"
+            placeholder="Telefono"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            value={telefono}
+            onChange={e => setTelefono(e.target.value)}
           />
         </div>
 
