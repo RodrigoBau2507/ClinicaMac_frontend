@@ -33,7 +33,7 @@ const Registrar = () => {
 
         // Crear el usuario en la api
         try {
-            await clienteAxios.post('/veterinarios', { nombre, email, password })
+            await clienteAxios.post('/doctores', { nombre, email, password })
             setAlerta({
                 msg: 'Creado Correctamente, revisa tu email',
                 error: false

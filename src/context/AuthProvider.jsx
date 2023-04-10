@@ -22,7 +22,7 @@ const AuthProvider = ({children}) => {
                 }
             }
             try {
-                const { data } = await clienteAxios('/veterinarios/perfil', config)
+                const { data } = await clienteAxios('/doctores/perfil', config)
                 setAuth(data)
             } catch (error) {
                 console.log(error.response.data.msg)
@@ -54,7 +54,7 @@ const AuthProvider = ({children}) => {
         }
 
         try {
-            const url = `/veterinarios/perfil/${datos._id}`
+            const url = `/doctores/perfil/${datos._id}`
             await clienteAxios.put(url, datos, config)
 
             return {
@@ -82,7 +82,7 @@ const AuthProvider = ({children}) => {
         }
 
         try {
-            const url = '/veterinarios/actualizar-password'
+            const url = '/doctores/actualizar-password'
 
             const { data } = await clienteAxios.put(url, datos, config)
             console.log(data) 

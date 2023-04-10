@@ -15,7 +15,7 @@ const NuevoPassword = () => {
   useEffect(() => {
     const comprobarToken = async () => {
       try {
-          await clienteAxios(`/veterinarios/olvide-password/${token}`)
+          await clienteAxios(`/doctores/olvide-password/${token}`)
           setAlerta({
             msg: 'Coloca tu Nuevo Password'
           })
@@ -42,7 +42,7 @@ const NuevoPassword = () => {
     }
 
     try {
-      const url = `/veterinarios/olvide-password/${token}`
+      const url = `/doctores/olvide-password/${token}`
       const { data } = await clienteAxios.post(url, { password } )
       setAlerta({
         msg: data.msg
