@@ -8,7 +8,7 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [alerta, setAlerta] = useState({})
+    const [alerta, setAlerta] = useState(false)
 
     const { setAuth } = useAuth()
 
@@ -23,6 +23,10 @@ const Login = () => {
                 error: true
             });
 
+            setTimeout(() => {
+                setAlerta(false)
+              }, 5000);
+
             return 
         }
 
@@ -36,6 +40,9 @@ const Login = () => {
                 msg: error.response.data.msg,
                 error: true
             })
+            setTimeout(() => {
+                setAlerta(false)
+              }, 5000);
         }
     }
 
