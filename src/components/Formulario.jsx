@@ -96,7 +96,7 @@ const Formulario = () => {
           <input
             id="nombre"
             type="text"
-            placeholder="Nombre de la Mascota"
+            placeholder="Nombre"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={nombre}
             onChange={e => setNombre(e.target.value)}
